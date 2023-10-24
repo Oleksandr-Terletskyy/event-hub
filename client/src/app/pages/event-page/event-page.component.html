@@ -1,0 +1,47 @@
+<div class="container">
+  <main>
+    <div class="event">
+      <div class="event__img">
+        <img [src]="event?.image" alt="">
+      </div>
+      <div class="event__info">
+        <div class="event__header">
+          <h1 class="event__title">{{ event?.name }}</h1>
+          <button class="button" (click)="rendCalendar()">
+            Attend
+          </button>
+        </div>
+        <p class="event__range">{{ date }}</p>
+        <div class="event__desc">
+          <p>{{ event?.previewText }}</p>
+        </div>
+        <div class="wrapper" [ngClass]="{calendar: calendarOpen}">
+          <header>
+            <p class="current-date">{{ currentDate }}</p>
+            <div class="icons">
+              <span id="prev" class="material-symbols-rounded">chevron_left</span>
+              <span id="next" class="material-symbols-rounded">chevron_right</span>
+            </div>
+          </header>
+          <div class="calendar">
+            <ul class="weeks">
+              <li>Sun</li>
+              <li>Mon</li>
+              <li>Tue</li>
+              <li>Wed</li>
+              <li>Thu</li>
+              <li>Fri</li>
+              <li>Sat</li>
+            </ul>
+            <ul class="days" #calendarDays>
+              <li *ngFor="let day of firstDayofMonth" class="day inactive">{{ day }}</li>
+              <li *ngFor="let day of days" class="day currentMonth"
+                [class.activeDay]="day >= startDate && day <= endDate">{{ day }}</li>
+              <li *ngFor="let day of lastDayofMonth" class="day inactive">{{ day }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

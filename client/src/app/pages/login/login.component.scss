@@ -1,0 +1,60 @@
+.login-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    height: 700px;
+    width: 450px;
+    border: 2px solid #3f4e4f;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &-users {
+      width: 100%;
+      margin-bottom: 100px;
+
+      .user-item {
+        &:hover {
+          background: lightblue;
+        }
+
+        border: 2px solid #3f4e4f;
+        height: 55px;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 7px;
+        display: flex;
+        cursor: pointer;
+
+        &__info {
+          width: 100%;
+          padding-left: 15px;
+
+          h2,
+          h3 {
+            line-height: 17px;
+          }
+        }
+
+        &__username {
+          font-size: 17px;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+
+        &__name {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &__text {
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<div class="login-container">
+  <div class="content">
+    <div class="logo">
+      <img src="../../../assets/images/event.png" alt="">
+      <h1>EventHub</h1>
+    </div>
+    <div class="content-users">
+      <div class="user-item" *ngFor="let user of users" (click)="onLoginUser(user.sessionKey)">
+        <img src="../../../assets/images/user.png" alt="" class="user-item__icon">
+        <div class="user-item__info">
+          <h2 class="user-item__username">{{ user.username}}</h2>
+          <h3 class="user-item__name">{{ user.name}}</h3>
+        </div>
+      </div>
+    </div>
+    <p class="content__text">These Terms of Service reflect <a
+        href="https://about.google/intl/en_UA/how-our-business-works" target="_blank">the way EventHub’s business
+        works</a>, the laws that apply to our company, and <a
+        href="https://www.google.com/about/philosophy.html?hl=en_US" target="_blank">certain things we’ve always
+        believed to be true</a>.
+      <br> As a result, these Terms of Service help define EventHub’s relationship with you as you interact with our
+      services. For example, these terms include the following topic headings.</p>
+  </div>
+</div>

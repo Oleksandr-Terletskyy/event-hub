@@ -1,0 +1,38 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #fbf8f1;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 88%;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+
+  h1 {
+    font-size: 32px;
+    margin: 0;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+  }
+}

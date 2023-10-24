@@ -1,0 +1,92 @@
+.header {
+  border-bottom: 2px solid #3f4e4f;
+}
+
+.container {
+  width: 90%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    margin: 0;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .user-data {
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+
+    &__info {
+      width: 100%;
+
+      p {
+        line-height: 17px;
+      }
+    }
+
+    &__username {
+      font-size: 17px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    &__name {
+      font-size: 14px;
+    }
+
+    &__icon {
+      margin-right: 17px;
+    }
+  }
+}
+
+.dropdown {
+  border: 2px solid #3f4e4f;
+  height: 100px;
+  width: 150px;
+  position: absolute;
+  top: 77px;
+  display: none;
+  background: white;
+  flex-direction: column;
+  justify-content: space-around;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 50%;
+    cursor: pointer;
+    padding: 10px;
+
+    &:hover {
+      background: lightblue;
+    }
+  }
+
+  &__icon {
+    height: 26px;
+    width: 26px;
+    margin-right: 10px;
+  }
+
+  &__text {
+    margin: 0;
+    font-weight: 550;
+  }
+
+  .text-red {
+    color: red;
+  }
+}
+
+.dropDownOpen {
+  .dropdown {
+    display: flex;
+  }
+}

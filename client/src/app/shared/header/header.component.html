@@ -1,0 +1,25 @@
+<header class="header">
+  <div class="container">
+    <div class="logo" [routerLink]="['/home']">
+      <img src="../../../assets/images/event.png" alt="" class="logo_icon">
+      <h1 class="logo_title">EventHub</h1>
+    </div>
+    <div class="user-data" appDropdown>
+      <img class="user-data__icon" src="../../../assets/images/user.png" alt="">
+      <div class="user-data__info">
+        <p class="user-data__username">{{ user?.username }}</p>
+        <p class="user-data__name">{{ user?.name }}</p>
+      </div>
+      <div class="dropdown" id="dropdown">
+        <div class="dropdown__item" [routerLink]="['/notifications']">
+          <img src="../../../assets/images/bell.png" alt="" class="dropdown__icon">
+          <p class="dropdown__text">Notifications</p>
+        </div>
+        <div class="dropdown__item" (click)="openDialog()">
+          <img src="../../../assets/images/log-out.png" alt="" class="dropdown__icon">
+          <p class="dropdown__text text-red">Logout</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

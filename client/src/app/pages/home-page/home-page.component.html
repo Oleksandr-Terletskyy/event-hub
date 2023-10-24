@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="home-header">
+    <div class="logo">
+      <img src="../../../assets/images/events_page_icon.png" alt="" class="logo_icon">
+      <h1 class="logo_title">Events</h1>
+    </div>
+    <button class="button" [routerLink]="['/statistics']">
+      Statistics
+    </button>
+  </div>
+  <main class="events">
+    <div class="event" *ngFor="let event of (events$ | async) as events; let i = index" [routerLink]="['/event']">
+      <div class="event-box" *ngIf="i + 1 === events.length" appLazyLoading (appInView)="observerAction()"
+        (click)="openEvent(event)">
+        <div class="event-header">
+          <p class="event_date">{{ convertDate(event?.dates) }}</p>
+          <p class="event_place">{{ event?.place }}</p>
+        </div>
+        <h1 class="event_name">{{ event?.name }}</h1>
+        <div class="event_img">
+          <img [src]="event?.image" alt="">
+        </div>
+        <div class="event_text">
+          <span>{{ event?.previewText }}</span>
+        </div>
+      </div>
+      <div class="event-box" *ngIf="i + 1 != events.length" (click)="openEvent(event)">
+        <div class="event-header">
+          <p class="event_date">{{ convertDate(event?.dates) }}</p>
+          <p class="event_place">{{ event?.place }}</p>
+        </div>
+        <h1 class="event_name">{{ event?.name }}</h1>
+        <div class="event_img">
+          <img [src]="event?.image" alt="">
+        </div>
+        <div class="event_text">
+          <span>{{ event?.previewText }}</span>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
